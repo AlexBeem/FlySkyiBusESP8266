@@ -1,38 +1,25 @@
-# FlySky iBus Decoder Library
+# FlySky iBus Decoder Library for the ESP8266
+This librarry allows to decode the iBus protocol for the ESP8266
 
-This library decoding transmitted data from FlySky i6 (not tested) or FlySky
-i6x (tested).
-The used reciever when testing library is FlySky FS-A8S.
-
-Default library supported 10 channels.
+Default library supported cannels is 10.
 
 ## Usage
 
-```console
-git clone https://github.com/utkudarilmaz/FlySkyiBus
-mv FlySkyiBus <arduino-ide>/libraries/
-```
+Open the example from your arduino enviroment after you have copied this library into your arduino library folder
+There are two example sketch that show most of the functions that this library can offer.
 
-Then import the library to source code.
-```c
-#include "FlySkyiBus.h"
+What has this library more than the one that was forked from?
+First of all:
+This library is specifically designed to work with the ESP8266
+Second:
+Channel size is easely changeble by calling a function
+Third:
+You can set a global offset and a switch offset, see the iBus example
+Fourth:
+You can set a RSSI channel and get it as a value from 0 to 100, even as int or string
+and finally:
+You can know when the receiver is connected and receiveing data, you can use that to manage the failsafe, for example
 
-FlySkyiBus iBus(2,2); //rx and tx pins
+Why I did this library?
+I'm going to use this library for a future project that involves the ESP8266
 
-void setup() {
-	Serial.begin(115200);
-	iBus.begin(115200);
-}
-
-void loop() {
-	iBus.read_serial();
-	Serial.println(iBus::get_channel(2)); // Channel number [0-9]
-}
-```
-
-## Hacking Library
-
-Normally iBus supported 14 channels communication.
-
-If you need more channels, edit the CHANNEL_SIZE macro on the FlySkyiBus.h
-header file.
