@@ -1,7 +1,7 @@
 /*
 	FlySkyiBus Decoder Library for the ESP8266
 
-    Source code: https://github.com/Dave4675/FlySkyiBus/
+    Source code: https://github.com/Dave4675/FlySkyiBusESP8266
 
     Edited 03-08-2020
     By Dave4675
